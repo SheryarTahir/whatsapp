@@ -45,17 +45,20 @@ class ContentPage extends StatelessWidget {
                 color: Colors.white,
               ),
               const SizedBox(
-                width: 10,
+                width: 15,
               ),
               const Icon(
                 Icons.person,
                 color: Colors.white,
               ),
               const SizedBox(
-                width: 10,
+                width: 0.5,
               ),
               PopupMenuButton(
-                icon: const Icon(Icons.more_vert_outlined),
+                icon: const Icon(
+                  Icons.more_vert_outlined,
+                  color: Colors.white,
+                ),
                 itemBuilder: (context) => [
                   const PopupMenuItem(
                     child: Text('New Group'),
@@ -108,84 +111,126 @@ class ContentPage extends StatelessWidget {
             //           ));
             //     }),
             ListView.builder(itemBuilder: (context, index) {
-              return const ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://img.freepik.com/free-photo/portrait-beautiful-brunette-girl-with-crossed-arms_176420-9832.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user'),
+              return Container(
+                margin: const EdgeInsets.all(10),
+                height: 80,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white30,
                 ),
-                title: Text('Kall Villians'),
-                subtitle: Text('Where are you'),
-                trailing: Text('2:30 AM'),
+                child: const ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://img.freepik.com/free-photo/portrait-beautiful-brunette-girl-with-crossed-arms_176420-9832.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user'),
+                  ),
+                  title: Text(
+                    'Kall Villians',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text('Where are you'),
+                  trailing: Text('2:30 AM'),
+                ),
               );
             }),
             ListView.builder(itemBuilder: (context, index) {
               if (index == 0) {
                 return Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       const Text('New Status'),
-                      ListTile(
-                        leading: Container(
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border:
-                                  Border.all(color: Colors.green, width: 3)),
-                          child: const CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                'https://img.freepik.com/free-photo/portrait-beautiful-brunette-girl-with-crossed-arms_176420-9832.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user'),
-                          ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(vertical: 10),
+                        height: 80,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white30,
                         ),
-                        title: const Text('Kall Villians'),
-                        subtitle: const Text('20min ago'),
+                        child: ListTile(
+                          leading: Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border:
+                                    Border.all(color: Colors.green, width: 3)),
+                            child: const CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  'https://img.freepik.com/free-photo/portrait-beautiful-brunette-girl-with-crossed-arms_176420-9832.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user'),
+                            ),
+                          ),
+                          title: const Text('Kall Villians'),
+                          subtitle: const Text('20min ago'),
+                        ),
                       ),
                     ],
                   ),
                 );
               } else {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text('Watched Status'),
-                      ListTile(
-                        leading: Container(
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border:
-                                  Border.all(color: Colors.green, width: 0)),
-                          child: const CircleAvatar(
-                            backgroundImage: NetworkImage(
-                                'https://img.freepik.com/free-photo0portrait-beautiful-brunette-girl-with-crossed-arms_176420-9832.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user'),
-                          ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(vertical: 10),
+                        height: 80,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white30,
                         ),
-                        title: const Text('Kall Villians'),
-                        subtitle: const Text('20min ago'),
+                        child: ListTile(
+                          leading: Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border:
+                                    Border.all(color: Colors.green, width: 0)),
+                            child: const CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                  'https://img.freepik.com/free-photo0portrait-beautiful-brunette-girl-with-crossed-arms_176420-9832.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user'),
+                            ),
+                          ),
+                          title: const Text('Kall Villians'),
+                          subtitle: const Text('20min ago'),
+                        ),
                       ),
                     ],
                   ),
                 );
               }
             }),
-            ListView.builder(itemBuilder: (context, index) {
-              return ListTile(
-                leading: const CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://img.freepik.com/free-photo/portrait-beautiful-brunette-girl-with-crossed-arms_176420-9832.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user'),
-                ),
-                title: const Text('Kall Villians'),
-                subtitle: Text(index / 2 == 0
-                    ? "You've missed the voice call"
-                    : "You've missed the video call"),
-                trailing: Icon(
-                    index / 2 == 0 ? Icons.phone : Icons.video_call_outlined),
-              );
-            }),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: ListView.builder(itemBuilder: (context, index) {
+                return Container(
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  height: 80,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white30,
+                  ),
+                  child: ListTile(
+                    leading: const CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://img.freepik.com/free-photo/portrait-beautiful-brunette-girl-with-crossed-arms_176420-9832.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=ais_user'),
+                    ),
+                    title: const Text('Kall Villians'),
+                    subtitle: Text(index / 2 == 0
+                        ? "You've missed the voice call"
+                        : "You've missed the video call"),
+                    trailing: Icon(index / 2 == 0
+                        ? Icons.phone
+                        : Icons.video_call_outlined),
+                  ),
+                );
+              }),
+            ),
           ])),
     );
   }
